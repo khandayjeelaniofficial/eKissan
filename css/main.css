@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: green;
+}
+
+.wrapper {
+    min-height: 300px;
+    margin: auto;
+    width: 90%;
+    background-color: #D2D79F !important;
+    font-family: 'Times New Roman', Times, serif;
+}
