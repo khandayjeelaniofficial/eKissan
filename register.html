@@ -30,108 +30,6 @@
     <link href="lib/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="lib/assets/css/style.css">
     <link rel="stylesheet" href="lib/css/register.css">
-
-    <style>
-        .form-t-title {
-            width: 100%;
-            background: #F5f5f5;
-            text-align: left;
-            padding: 10px;
-            margin: 20px auto;
-            font-weight: bold;
-        }
-        
-        .pt-1 {
-            padding-top: 10px;
-        }
-        
-        .pt-2 {
-            padding-top: 20px;
-        }
-        
-        .noselect {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        .multichk_deopWrap {
-            position: relative;
-        }
-        
-        .dropdown-container-chk {
-            position: absolute;
-            width: 100%;
-            margin: 20px auto 0;
-            font-size: 14px;
-            font-family: sans-serif;
-            overflow: auto;
-            z-index: 9;
-            background-color: white;
-        }
-        
-        .instructions {
-            width: 100%;
-            text-align: center;
-        }
-        
-        .dropdown-button {
-            float: left;
-            width: 92%;
-            background: whitesmoke;
-            padding: 7px 10px;
-            cursor: pointer;
-            border: 1px solid lightgray;
-            box-sizing: border-box;
-        }
-        
-        .dropdown-button .dropdown-label,
-        .dropdown-button .dropdown-quantity {
-            float: left;
-        }
-        
-        .dropdown-button .dropdown-quantity {
-            margin-left: 4px;
-        }
-        
-        .dropdown-button .fa-filter {
-            float: right;
-        }
-        
-        .dropdown-list {
-            float: left;
-            width: 100%;
-            border: 1px solid lightgray;
-            border-top: none;
-            box-sizing: border-box;
-            padding: 10px 12px;
-        }
-        
-        .dropdown-list input[type="search"] {
-            padding: 5px 0;
-            width: 100%;
-        }
-        
-        .dropdown-list ul {
-            margin: 10px 0;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-        
-        .dropdown-list ul input[type="checkbox"] {
-            position: relative;
-            top: 2px;
-        }
-        
-        input[type=radio] {
-            height: 10px;
-            width: 10px;
-            vertical-align: baseline;
-        }
-    </style>
 </head>
 
 <body>
@@ -218,905 +116,297 @@
     <section class="title-header-bg-apmc" style="background-image: url(images/img_7.jpg);height: 280px;"></section>
 
     <!-- Registration Form -->
-    <div class="container-fluid content-section">
-        <div class="col-md-12 bc-nav pt-1"><a href="index.html" title="">Home</a>&nbsp;<i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>&nbsp; Registration</div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form id="registration_form" name="f1" method="POST" enctype="multipart/form-data" action="#">
-                <div class="h-space-padd-r">
-                    <h3 class="p-title"><span style="border: 2px solid #e9efb6;">e-Kissan Registration form</span></h3>
-                </div>
-                <div class="h-space-padd-r col-lg-12" id="basicdetail_div" style="display: none;">
-                    <h3 class="p-title"><span style="font-size: 15px;">Basic Details</span></h3>
-                </div>
-                <!-- <div class="clearfix"></div> -->
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Registration Type
-                            <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="utype" id="regtype">
-                                <option value="0">-Select-</option>
-                                <option value="F">Seller</option>
-                                <option value="T">Buyer</option>
-                                <option value="A">Commission Agent</option>
-                                <option value="P">Service Provider</option>
-                            </select>
-                            <div class="text-danger" id="regtype_error" style="display:none;"></div>
-                        </div>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Registration Form -->
 
-                    <div style="display: none;" class="mydisplayboxfpcT">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom:20px;">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                Registration Category
-                                <span style="color:#F00">*</span>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                <select class="form-control" name="regcat" onchange="showboxfpcfpo(this.value)" onfocus="clearApmcT(this);" id="regcat">
-                                    <option value="0">Select Please</option>
-                                    <option value="TA">Trader</option>
-                                    <option value="CA">Commission Agent</option>
-                                    <option value="CO">Co-Operative</option>
-                                    <option value="EX">Exporter</option>
-                                    <option value="PO">Processor</option>
-                                    <option value="GA">Government Agency</option>
-                                    <option value="RT">Retailor</option>
-                                    <option value="AG">Aggregator</option>
-                                    <option value="FF">FPO/FPC</option>
-                                    <option value="OT">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="display: none;" class="mydisplayboxfpcF">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom:20px;">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                Registration Category
-                                <span style="color:#F00">*</span>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                <select class="form-control" name="fpctypeF" id="fpctypeF">
-                                    <option>Select Please</option>
-                                    <option value="IF">Individual Farmer</option>
-                                    <option value="FF">Farmer Producer Company (FPC)</option>
-                                    <option value="CR">Co-Operative</option>
-                                    <option value="FG">Farmer Group(SHG)</option>
-                                    <option value="GA">Government Agency</option>
-                                    <option value="OT">Other(Aggregator etc.)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="display: none;" class="mydisplayboxbuy">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom:20px;">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                Registration Category
-                                <span style="color:#F00">*</span>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                <select class="form-control" name="fpctypeT" id="fpctypeT">
-                                    <option>Select Please</option>
-                                    <option value="TA">Trader</option>
-                                    <option value="CA">Commission Agent</option>
-                                    <option value="CO">Co-Operative</option>
-                                    <option value="EX">Exporter</option>
-                                    <option value="PO">Processor</option>
-                                    <option value="GA">Government Agency</option>
-                                    <option value="RT">Retailor</option>
-                                    <option value="AG">Aggregator</option>
-                                    <option value="OT">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="display: none;" class="mydisplayboxfpcSP">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom:20px;">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                Registration Category
-                                <span style="color:#F00">*</span>
-
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                <select class="form-control" name="fpctypeP" id="fpctypeP">
-                                    <option>Select Please</option>
-                                    <option value="HA">Hamal</option>
-                                    <option value="LP">Logistic Provider</option>
-                                    <option value="LU">Loader / Unloader</option>
-                                    <option value="GD">Grader</option>
-                                    <option value="WH">Warehouse</option>
-                                    <option value="CS">Cold Storage Operator</option>
-                                    <option value="PK">Packer</option>
-                                    <option value="QA">Quality Assayer</option>
-                                    <option value="OT">Other</option>
-                                </select>
-                            </div>
-                        </div>
+            <form class="row g-3" action="#">
+                <!-- Registration Type -->
+                <div class=" alert alert-primary d-flex align-items-center mt-2 fs-6 " role="alert ">
+                    <svg class="bi flex-shrink-0 me-2 " width="24 " height="24 " role="img " aria-label="Info: "><use xlink:href="#info-fill "/></svg>
+                    <div>
+                        <b><i class="fa fa-user "></i> e-Kissan Registration Form</b>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 apply_enam_mandi" style="padding-bottom:10px;display: none;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Registered with e-NAM
-                            <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="radio" class="enam_mandi" name="regiWithEnam" value="E" id="enamMandi"> Yes
-                            <input type="radio" class="enam_mandi" name="regiWithEnam" value="N" id="nonEnamMandi" style="margin-left: 10px;"> No
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="mandi_trader" style="padding-bottom:10px;display: none;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            e-NAM Trader ID
-                            <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" autocomplete="off" class="form-control" name="trader_id" id="trader_id" maxlength="20" onchange="validateUnifiedTrader();">
-                            <div class="text-danger" id="trader_id_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-bottom:10px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Registration Level
-                            <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="radio" class="reg_level" name="registerlevel" value="S" id="state_level"><span class="statelevelspan"> State </span>
-                            <input type="radio" class="reg_level" name="registerlevel" value="M" id="mandi_level" style="margin-left: 10px;"><span class="mandilevelspan"> Mandi </span>
-
-
-
-                            <div class="text-danger" id="registerlevel_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pt-2" id="state_name" style="padding-bottom:20px;display: none;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <!-- Registered With State
-                            <span style="color:#F00">*</span> : -->
-                            <span id="registered_label_s">Registered With State<span style="color:#F00">*</span> :</span>
-                            <span id="register_label_s" style="display:none">Register With State<span style="color:#F00">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="mandistate" id="regstate" onchange="dyanamicStateChange(this.id,this.id);">
-                                    <option selected="" value="0">-Select-</option>
-                            </select>
-                            <div class="text-danger" id="regstate_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  pt-2" id="apmc_name" style="padding-bottom:20px;display:none">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <span id="registered_label_m">Registered with Mandi<span style="color:#F00">*</span> :</span>
-                            <span id="register_label_m" style="display:none">Register with Mandi<span style="color:#F00">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="apmcname" id="reg_with">
-                               <option selected="" value="0">-Select-</option>
-                            </select>
-                            <div class="text-danger" id="reg_with_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  pt-2" id="service_territory" style="display:none">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Service Territory :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="serviceTerritory" id="serviceTerritory">
-                                <option selected="" value="">Service Territory</option>
-                                <option value="I">Intra State</option>
-                                <option value="IS">Inter State</option>
-                            </select>
-                            <div class="text-danger" id="serviceTerritory_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="apply_state" style="padding-bottom:10px;display: none;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Applying For State
-                            <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="applystate" id="applystate" onchange="onApplyStateChange(this)">
-                                    <option selected="" value="0">-Select-</option>
-                            </select>
-                            <div class="text-danger" id="applystatestate_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="apply_apmc" style="padding-top:10px;display: none;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            Apply For APMC
-                            <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <div class="dropdown-container-chk">
-                                <div class="dropdown-button noselect">
-                                    <div class="dropdown-label">APMC</div>
-                                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
-                                    <i class="fa fa-filter"></i>
-                                </div>
-                                <div class="dropdown-list" style="display: none;">
-                                    <input type="search" placeholder="Search APMC" class="dropdown-search" id="multichkAPMC" />
-                                    <ul></ul>
-                                </div>
-                            </div>
-                            <div class="text-danger" id="trader_id_error" style="display:none;"></div>
-                        </div>
-                        <input type="hidden" name="selectApmcList" id="selectApmcList">
-                    </div>
-                </div>
-
-                <div class="clearfix"></div>
-                <!---------------- changes farmer registration ------------------------------------->
-                <div class="h-space-padd-r col-lg-12 pt-2">
-                    <h3 class="p-title"><span style="font-size: 15px;">Personal Details</span></h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            Title <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <select class="form-control" name="nametitle" id="nametitle">
-                                <option value="0">Select Please</option>
-                                <option value="Mr">Mr.</option>
-                                <option value="Mrs">Mrs.</option>
-                                <option value="Ms">Ms.</option>
-                            </select>
-                            <div class="text-danger" id="nametitle_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            First Name <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text" autocomplete="off" class="form-control" name="fname" id="reg_fname" maxlength="40">
-                            <div class="text-danger" id="reg_fname_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            Middle Name :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text" autocomplete="off" class="form-control" name="mname" id="reg_mname" maxlength="20">
-                            <div class="text-danger" id="reg_mname_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            Last Name <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text" autocomplete="off" class="form-control" name="lname" id="reg_lname" maxlength="40">
-                            <div class="text-danger" id="reg_lname_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Gender <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="gender" id="reg_gender">
-                                <option value="0">-Select-</option>
-                                <option value="M">Male</option>
-                                <option value="F">Female</option>
-                                <option value="O">Others</option>
-                            </select>
-                            <div class="text-danger" id="reg_gender_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <span id="dodate">Date of Birth <span style="color:#F00">*</span> :</span>
-                            <span id="estdate" style="display:none">Establishment Date <span style="color:#F00">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" autocomplete="off" class="form-control" name="reg_dob" id="reg_dob" placeholder="DD/MM/YYYY">
-                            <div class="text-danger" id="reg_dob_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">Relation Type <span style="color:#F00">*</span></div>
-                        <div class=" col-xs-12 col-sm-8">
-                            <select class="form-control" name="relationtype" id="relationtype">
-                            <option value="0">-Select-</option>
-                            <option value="Son Of">Son Of</option>
-                            <option value="Daughter Of">Daughter Of</option>
-                            <option value="Wife Of">Wife Of</option>
-                            <option value="Father Of">Father Of</option>
-                            <!-- <option value="Husband Of">Husband Of</option> -->
-                            <option value="Mother Of">Mother Of</option>
-                        </select>
-
-                            <input type="text" autocomplete="off" placeholder="Enter Relation Name" class="form-control" name="relationtypename" id="relationtypename" maxlength="50" style="margin-top: 16px;">
-
-                            <div class="text-danger" id="relationtype_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">Address (Street) <span style="color:#F00">*</span> :</div>
-                        <div class="col-lg-10 col-md-10 col-xs-12 col-sm-8">
-                            <textarea class="form-control" style="width:100%;" rows="4" cols="30" maxlength="150" name="address" id="reg_street"> </textarea>
-                            <div class="text-danger" id="reg_street_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">Pincode :</div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" autocomplete="off" class="form-control" name="pin" id="reg_pin" maxlength="6" onkeypress="return isNumber(event)" pattern="^[67890]\d{9}$">
-                            <div class="text-danger" id="reg_pin_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">State <span style="color:#F00">*</span>:</div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="state" id="add_state">
-                                <option value="0">-Select-</option>
-                            </select>
-                            <div class="text-danger" id="add_state_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">District <span style="color:#F00">*</span>:</div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="district" id="add_district">
-                                <option value="0">-Select-</option>
-                            </select>
-
-                            <div class="text-danger" id="add_district_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">Tehsil/Sub-district <span style="color:#F00">*</span>:</div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="tehsil" id="add_tehsil">
-                                <option value="0">-Select-</option>
-                                
-                            </select>
-                            <div class="text-danger" id="add_tehsil_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">City/Village <span style="color:#F00">*</span>:</div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="village" id="add_village">
-                                <option value="0">-Select-</option>
-                            </select>
-
-                            <div class="text-danger" id="add_village_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">Post <span style="color:#F00">*</span>:</div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" autocomplete="off" class="form-control" name="post" id="add_post" maxlength="40">
-                            <div class="text-danger" id="add_post_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">Photo Id Type
-                            <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="photoidtype" id="photoidtype" onchange="changeValue(this);">
-                                <option value="0">-Select-</option>
-                                <option value="Adhaar">Aadhaar</option>
-                                <option value="PAN card">PAN card</option>
-                                <option value="ration">Ration card</option>
-                                <option value="driving">Driving licence</option>
-                                <option value="voter">VoterID</option>
-                                <option value="passport">Passport</option>
-                            </select>
-                            <div class="text-danger" id="photoidtype_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">Photo ID Number
-                            <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" autocomplete="off" class="form-control" name="idnumber" id="idnumber" onblur="onBlurPhotoIdNo()">
-                            <div class="text-danger" id="idnumber_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Mobile No. <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" autocomplete="off" class="form-control" name="mobile" id="reg_mobile" onkeypress="return isNumber(event)" pattern="^[67890]\d{9}$" maxlength="10" onblur="onBlurMobileNo()">
-                            <div class="text-danger" id="reg_mobile_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- for new fpo changes -->
-                <div class="h-space-padd-r col-lg-12 pt-2" id="fpo_div" style="display: none;">
-                    <h3 class="p-title"><span style="font-size: 15px;">FPO Organization Details</span></h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 collectionbox" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Collection Center <span style="color:#F00">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <select class="form-control" name="collection" id="collection">
-                                <option value="0">-Select-</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                            <div class="text-danger" id="collection_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="padding-top:20px;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            Email ID <span style="color:#F00">*</span>:
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" autocomplete="off" class="form-control" name="email" id="reg_email" maxlength="50" onblur="onBlurEmail()">
-                            <div class="text-danger" id="reg_email_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div style="margin-top:43px; display: none;" id="justBeforeEmail">
-                        <br>
-                        <span style="color:red;"><small><b>Note - </b></small>Please make sure correct mail ID is mentioned in <b>" Email ID "</b> field as all future communications from eNAM will be sent on same Email ID.</span>
-                    </div>
-
-                    <!-- for new trader changes -->
-                    <div class="h-space-padd-r col-lg-12 pt-2" id="firm_div" style="display: none;">
-                        <h3 class="p-title"><span style="font-size: 15px;">Firm Details</span></h3>
-                    </div>
-                    <!-- trader changes end -->
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 comname-div">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <span id="compname">Company Name<span style="color:#F00">*</span> :</span>
-                            <span id="copname" style="display:none;">Co-operative Name<span style="color:#F00">*</span> :</span>
-                            <span class="firmname" style="display:none;">Firm Name<span style="color:#F00">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" name="company_name" id="company_name" class="form-control" autocomplete="off">
-                            <div class="text-danger" id="company_name_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 companyreg-div">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <span id="compreg">Company Reg. No<span id="span_compregnoast" style="color:#F00">*</span> :</span>
-                            <span id="iecno" style="display:none">IEC No<span style="color:#F00">*</span> :</span>
-                            <span id="firmno" style="display:none">Firm Reg. No<span style="color:#F00">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" name="company_reg" id="company_reg" class="form-control" autocomplete="off" onkeypress="return toCheckSpecialChars(event)" maxlength="21">
-                            <div class="text-danger" id="company_reg_error" style="display:none;"></div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 licence oncommo">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <span class="lincno">License No.<span style="color:#F00">*</span> :</span>
-                            <span class="coregno" style="display:none;">Co-operative Reg. No.<span style="color:#F00">*</span> :</span>
-                            <span class="apmc_unilicenseno" style="display:none;">Apmc/Unified License No.<span style="color:#F00">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" name="unified_license" id="unified_license" class="form-control" autocomplete="off">
-                        </div>
-                    </div>
-
-                    <!-- new change for trader -->
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fortrader oncommo" style="display: none;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <span>License Valid From<span style="color:#F00">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" name="license_fromDate" id="license_fromDate" class="form-control" placeholder="DD/MM/YYYY" autocomplete="off">
-                            <div class="text-danger" id="license_fromDate_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fortrader oncommo" style="display: none;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <span>License Valid Upto<span style="color:#F00">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            <input type="text" name="license_toDate" id="license_toDate" class="form-control" placeholder="DD/MM/YYYY" autocomplete="off">
-                            <div class="text-danger" id="license_toDate_error" style="display:none;"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fortrader" style="display: none;">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <span ">Firm Address<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="firm_add " id="firm_add " class="form-control "
-                            autocomplete="off ">
-                            <div class="text-danger " id="firm_add_error " style="display:none; "></div>
-                        </div>
-                    </div>
-                    <!-- end changes -->
-                    
-                    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 ogname-div ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            Organisation Name<span style="color:#F00 ">*</span> :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="org_name " id="org_name " class="form-control " autocomplete="off ">
-                            <div class="text-danger " id="org_name_error " style="display:none; "></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 orgadd-div ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                        
-                            <span id="span_orgadd ">Organisation Address<span style="color:#F00 ">*</span> :</span>
-                            <span id="span_cooperadd " style="display:none ">Co-operative Address<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="org_address " id="org_address " class="form-control "
-                            autocomplete="off ">
-                            <div class="text-danger " id="org_address_error " style="display:none; "></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 orgcin-div ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            <span id="span_orgcin ">Organisation CIN<span style="color:#F00 ">*</span> :</span>
-                            <span id="span_orgregno ">Organisation Reg. No.<span style="color:#F00 ">*</span> :</span>
-                            <span id="span_orgcinregno ">Organization CIN/ Reg No<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="org_cin " id="org_cin " class="form-control " autocomplete="off " onkeypress="return toCheckSpecialChars(event) " maxlength="21 ">
-                            <div class="text-danger " id="org_cin_error " style="display:none; "></div>
-                        </div>
-                    </div>
-    
-                    <!-- fpo related state, district, tehsil, village pin code -->
-    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fpo-comp-reg " style="display: none; ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            <span class="fpoorgpin ">Org Pincode<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="fpo_org_pin " id="fpo_org_pin " class="form-control " required maxlength="6 " onkeypress="return isNumber(event) " pattern="^[67890]\d{9}$ " autocomplete="off ">
-                            <div class="text-danger " id="fpo_org_pin_error " style="display:none; "></div>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fpo-comp-reg " style="display: none; ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            <span>Fpo State<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <select class="form-control " name="fpo_state " id="fpo_state " required>
-                                <option value="0 ">-Select-</option>
-                            </select>
-                            <div class="text-danger " id="fpo_state_error " style="display:none; "></div>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fpo-comp-reg " style="display: none; ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            <span>Fpo District<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <select class="form-control " name="fpo_district " id="fpo_district ">
-                                <option value="0 ">-Select-</option>
-                            </select>
-                            <div class="text-danger " id="fpo_district_error " style="display:none; "></div>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fpo-comp-reg " style="display: none; ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            <span>Fpo Tehsil/Sub-district<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <select class="form-control " name="fpo_tehsil " id="fpo_tehsil ">
-                                <option value="0 ">-Select-</option>
-                            </select>
-                            <div class="text-danger " id="fpo_tehsil_error " style="display:none; "></div>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fpo-comp-reg " style="display: none; ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            <span>Fpo City/Village<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <select class="form-control " name="fpo_village " id="fpo_village ">
-                                <option value="0 ">-Select-</option>
-                            </select>
-                            <div class="text-danger " id="fpo_village_error " style="display:none; "></div>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 fpo-comp-reg " style="display: none; ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            <span>Establishment Date<span style="color:#F00 ">*</span> :</span>
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="fpo_estdate " id="fpo_estdate " class="form-control " required placeholder="DD/MM/YYYY ">
-                        </div>
-                    </div>
-                    
-    
-                    <!--  -->
-                    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 co-type " id="co-type " style="display:none ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                                Co-operative Type
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <select class="form-control " name="cop_type " id="cop_type ">
-                                <option value="0 ">Select Please</option>
-                                <option value="gen_cop ">General Co-Operatives</option>
-                                <option value="wdra_cop ">WDRA Acc. Co-operatives</option>
-                            </select>
-                            <div class="text-danger " id="cop_type_error " style="display:none; "></div>
-                        </div>
-                    </div>
-                
-    
-                </div>
-                
-                
-                <div style="display:none " class="row service-provider " id="service-provider " >
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 " >
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            Landline No *:
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="landline_no " id="landline_no " class="form-control ">
-                            <div class="text-danger " id="landline_no_error " style="display:none; "></div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 " id="showTotalTurnover " style="padding-top:20px;display:none; ">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                              Total Turnover :                                                                 
-                        </div>
-    
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " autocomplete="off " class="form-control " name="totalturnover " id="totalturnover " maxlength="50 "/>
-                        </div>
-                    </div>
-    
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 " >
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            Year of Establishment *:
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="year_est " id="year_est " class="form-control ">
-                            <div class="text-danger " id="year_est_error " style="display:none; "></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pt-2 " >
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                            GST :
-                        </div>
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                            <input type="text " name="gst " id="gst " class="form-control ">
-                            <div class="text-danger " id="gst_error " style="display:none; "></div>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top:30px; " id="afterBeforeEmail ">
-                    <span style="color:red; "><small><b>Note - </b></small>Please make sure correct mail ID is mentioned in <b>" Email ID "</b> field as all future communications from eNAM will be sent on same Email ID.</span>
-                </div>
-                <div class="bank_details ">
-                    <!-- 	/////////////////////////// -->
-                    <div class="h-space-padd-r col-lg-12 pt-2 ">
-                            <h3 class="p-title "><span style="font-size: 15px; ">Bank Details</span></h3>
-                    </div>
-                    <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 " style="padding-top:20px; ">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                                Bank Name <span style="color:#F00 ">*</span> :
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                                <input type="text " autocomplete="off " class="form-control " name="fpcBank " maxlength="50 " id="fpcBank ">
-                                <div class="text-danger " id="fpcBank_error " style="display:none; "></div>
-                            </div>
-                        </div><!--this field are added change max lenght-->
-    
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 " style="padding-top:20px; ">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                                Account Holder Name as per Bank A/C  <span style="color:#F00 ">*</span>
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                                <input type="text " autocomplete="off " class="form-control " name="fpcBankAccountName " maxlength="50 " id="fpcBankAccountName ">
-                                <div class="text-danger " id="fpcBankAccountName_error " style="display:none; "></div>
-                            </div>
-                        </div><!--this field are added change max lenght-->
-                    </div>
-                    <div class="row ">
-                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 " style="padding-top:20px; ">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                                Bank Account No <span style="color:#F00 ">*</span> :
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                                <input type="password " autocomplete="new-password " class="form-control " name="fpcBankAccount " id="fpcBankAccount " maxlength="16 " oncopy="return false " onpaste="return false ">
-                                <div class="text-danger " id="fpcBankAccount_error " style="display:none; "></div>
-                            </div>
-                        </div><!--this field are added change max lenght-->
-    
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 " style="padding-top:20px; ">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                               Confirm Account No<span style="color:#F00 ">*</span> 
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                                <div class="input-group ">	
-                                    <input type="password " autocomplete="off " class="form-control " name="typeagainaccount " id="typeagainaccount " maxlength="16 " oncopy="return false " onpaste="return false " onChange="checkAccNumberMatch(); ">
-                                    <span class="input-group-addon " style="padding: 6px 6px; " >
-                                    <i class="fa fa-eye-slash " id="confirm-acc " >
-                                    </i>
-                                    </span>
-                                </div>
-                                <div class="text-danger " id="typeagainaccount_error "></div>
-                            </div>
-                        </div> <!--this field are added change max lenght-->
-                    </div>
-            
-                    <div class="row ">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 " style="padding-top:20px; ">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                                IFSC Code <span style="color:#F00 ">*</span> :
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                                <input type="password " autocomplete="off " class="form-control " name="fpcIfsc " id="fpcIfsc " maxlength="11 " oncopy="return false " onpaste="return false " style="text-transform: uppercase ">
-                                <div class="text-danger " id="fpcIfsc_error " style="display:none; "></div>
-                            </div>
-                        </div><!--this field are added change max lenght-->
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 " style="padding-top:20px; ">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-                                Confirm IFSC Code <span style="color:#F00 ">*</span> 
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">
-                                <div class="input-group ">	
-                                    <input type="password " autocomplete="off " class="form-control " name="typeagainifsc " id="typeagainifsc " maxlength="11 " oncopy="return false " onpaste="return false "  onChange="checkIfscNumberMatch();
-                                " style="text-transform: uppercase ">
-                                    <span class="input-group-addon "  style="padding: 6px 6px; ">
-                                    <i class="fa fa-eye-slash " id="ifsc-code " ></i>
-                                    </span>
-                                </div>
-                                <div class="text-danger " id="typeagainifsc_error "></div>
-                            </div>
-                        </div><!--this field are added change max lenght-->
-                    </div>
-                    <div class="row ">
-                        <div class="col-xs-12 col-sm-12 " style="padding-top:20px; ">
-                            <div class="col-xs-12 col-sm-4 ">
-                               Upload Copy Of Passbook/Cancelled Check in Support <span id="pass_ast " style="color:#F00; display: none; ">*</span> :
-                            </div>
-                            <div class="col-xs-12 col-sm-4 btn-upload ">
-                                <div class="fileUpload btn ">
-                                    <input type="file " name="passbook " id="uploadBtn_passbook " accept="image/jpg,image/jpeg,.pdf " onchange="loadFile(this); ">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-4 ">
-                                <img class="preview_img " src="# " alt="Passbook Image " name="passbookImage " id="passbookImage " width="100px " height="100px ">
-                                <input type="hidden " name="base64_passbook " id="base64_passbook ">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 " style="padding-top:20px; ">
-                            <div class="col-xs-12 col-sm-4 ">
-                               Upload One Scan Copy Of Id Proof <span id="id_ast " style="color:#F00; display: none; ">*</span> :
-                            </div>
-                            <div class="col-xs-12 col-sm-4 btn-upload ">
-                                <div class="fileUpload btn ">
-                                    <input id="uploadBtn_proof " class="upload " name="idproof " type="file " accept="image/jpg,image/jpeg,.pdf " onchange="loadIdProofFile(this); " />
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-4 ">
-                                <img class="preview_img " src="# " alt="your Image " id="idProofImage " width="100px " height="100px ">
-                                <input type="hidden " name="base64_idproof " id="base64_idproof ">
-                            </div>
-                        </div>
-    
-                        <div class="col-xs-12 col-sm-12 comp-certi " style="padding-top:20px;display: none; ">
-                            <div class="col-xs-12 col-sm-4 ">
-                               Upload Company Registration Certificate <span id="comp_ast " style="color:#F00; ">*</span>  :
-                            </div>
-                            <div class="col-xs-12 col-sm-4 btn-upload ">
-                                <div class="fileUpload btn ">
-                                    <input id="company_certificate " class="upload " name="companyproof " type="file " accept="image/jpg,image/jpeg,.pdf " onchange="loadCompanyCertificateFile(this); " required />
-                                    <div class="text-danger " id="company_certificate_error " style="display:none; "></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-4 ">
-                                <img class="preview_img " src="# " alt="your Image " id="companyImage " width="100px " height="100px ">
-                                <input type="hidden " name="base64_certificate " id="base64_certificate ">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row upload_service " style="display:none ">
-                    <div class="col-xs-12 col-sm-12 " style="padding-top:20px; ">
-                        <div class="col-xs-12 col-sm-4 ">
-                           Upload Copy of Logistick Details :
-                        </div>
-                        <div class="col-xs-12 col-sm-4 btn-upload ">
-                            <div class="fileUpload btn ">
-                                <input id="uploadBtn_logistic " type="file " name="userLogFiles ">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-4 ">
-                            <img class="preview_img " src="# " alt="Logistick Copy " id="logisticImage " width="100px " height="100px ">
-                        </div>
-                    </div>
-                </div>
-                
-    
                 <div class="row ">
-                    <div class="col-xs-12 col-sm-12 " style="padding-top:20px; ">
-                        <div class="col-xs-12 col-sm-5 col-md-3 ">Registration Acknowledgement:</div>
-                        <div class="col-xs-12 col-sm-7 ">
-                            <input type="checkbox " id="GetSMS " name="sendSms " id="GetAcknowledge " value="Y " checked>&nbsp;&nbsp; Get SMS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="checkbox " id="GetEmail " name="sendEmail " id="GetAcknowledge " value="Y " checked> &nbsp;&nbsp; Get Email
-                        </div>
+                    <div class="col-md-4 ">
+                        <label for="reg_type " class="form-label ">Registration Type</label>
+                        <select id="reg_type " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Seller</option>
+                        <option id="1 ">Buyer</option>
+                        <option id="2 ">Service Provider</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 ">
+                        <label for="reg_cat " class="form-label ">Registration Category</label>
+                        <select id="reg_cat " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Individual Farmer</option>
+                        <option id="1 ">Govt. Agency</option>
+                        <option id="2 ">Farmer Group</option>
+                        <option id="3 ">Trader</option>
+                        <option id="4 ">Exporter</option>
+                        <option id="5 ">Retailor</option>
+                        <option id="6 ">Commission Agent</option>
+                        <option id="2 ">Co-Operative</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 ">
+                        <label for="reg_cat " class="form-label ">Registration Category</label>
+                        <select id="reg_cat " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Individual Farmer</option>
+                        <option id="1 ">Govt. Agency</option>
+                        <option id="2 ">Farmer Group</option>
+                        <option id="3 ">Trader</option>
+                        <option id="4 ">Exporter</option>
+                        <option id="5 ">Retailor</option>
+                        <option id="6 ">Commission Agent</option>
+                        <option id="2 ">Co-Operative</option>
+                      </select>
                     </div>
                 </div>
 
-    
-                <div class="h-space-padd-r col-lg-12 pt-2 " id="blockUnifiedLicense " style="display: none; ">
-                    <h3 class="p-title "><span style="font-size: 15px; ">Upload Documents</span></h3>
-                <!-- </div> -->
-                
-                    <input type="hidden " id="uploadUnifiedLicense " name="uploadUnifiedLicense " value=" " />
-                    <div style="width:100%;background:#F5f5f5;text-align:left;padding:10px;margin:20px auto;font-weight:bold; ">
-                           <span id="apmc_license " style="display: none; ">Document required for APMC License</span>
-                           <span id="state_unified " style="display: none; ">Document required for Unified License</span>
-                    </div>
-    
-                    <div class="row " style="margin-top:15px; ">
-                           <table id="unifiedLicenseTableLeft " class="table table-bordered " style="width:95%;float:left;margin-left:30px; ">
-                           <tbody></tbody>
-                        </table>                                        
+                <!-- Personal Details -->
+                <div class="alert alert-primary d-flex align-items-center mt-3 fs-6 " role="alert ">
+                    <svg class="bi flex-shrink-0 me-2 " width="24 " height="24 " role="img " aria-label="Info: "><use xlink:href="#info-fill "/></svg>
+                    <div>
+                        <b><i class="fa fa-id-card "></i> Personal Details</b>
                     </div>
                 </div>
-    
-                <div style="width:100%; margin:10px auto; border-top:1px solid #eeeeee; "></div>
-            
-                <input type="hidden " name="registration_category " id="registration_category ">
-                <input type="hidden " name="notifyDeNotify " id="notifyDeNotify ">
                 <div class="row ">
-                    <div class="col-lg-12 ">
-                        <button id="enam_registration " type="button " class="btn btn-success " style="margin-right: 20px;padding-left:20px;padding-right: 20px; ">Submit</button>
-                        <button style="padding-left:20px;padding-right: 20px; " type="reset " id="registration_reset " class="btn btn-default btn-space ">Cancel</button>
+                    <div class="col-md-4 ">
+                        <label for="title " class="form-label ">Title</label>
+                        <select id="title " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Mr.</option>
+                        <option id="1 ">Mrs.</option>
+                        <option id="2 ">Ms.</option>
+                      </select>
                     </div>
-                    
-                </div>	
+                    <div class="col-md-4 ">
+                        <label for="fname " class="form-label ">First Name</label>
+                        <input type="text " class="form-control " id="fname ">
+                    </div>
+                    <div class="col-md-4 ">
+                        <label for="mname " class="form-label ">Middle Name</label>
+                        <input type="text " class="form-control " id="mname ">
+                    </div>
+                </div>
+
+                <div class="row pt-3 ">
+                    <div class="col-md-4 ">
+                        <label for="lname " class="form-label ">Last Name</label>
+                        <input type="text " class="form-control " id="lname ">
+                    </div>
+                    <div class="col-md-4 ">
+                        <label for="gender " class="form-label ">Gender</label>
+                        <select id="gender " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Male</option>
+                        <option id="1 ">Female</option>
+                        <option id="2 ">Other</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 ">
+                        <label for="dob " class="form-label ">Date of Birth</label>
+                        <input type="date " class="form-control " id="dob ">
+                    </div>
+                </div>
+
+                <div class="row pt-3 ">
+                    <div class="col-12 ">
+                        <label for="adress " class="form-label ">Address (Street)</label>
+                        <input type="text " class="form-control " id="adress " placeholder="1234 example example ">
+                    </div>
+                </div>
+
+                <div class="row pt-3 ">
+                    <div class="col-4 ">
+                        <label for="pincode " class="form-label ">Pincode</label>
+                        <input type="number " class="form-control " id="pincode " placeholder="192101 ">
+                    </div>
+                    <div class="col-md-4 ">
+                        <label for="title " class="form-label ">State</label>
+                        <select id="title " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Andaman & Nicobar Islands (UT)</option>
+                        <option id="1 ">Andhra Pradesh</option>
+                        <option id="2 ">Arunachal Pradesh</option>
+                        <option id="3 ">Assam</option>
+                        <option id="4 ">Bihar</option>
+                        <option id="5 ">Chandigarh (UT)</option>
+                        <option id="6 ">Chhattisgarh</option>
+                        <option id="7 ">Delhi (UT)</option>
+                        <option id="8 ">Goa</option>
+                        <option id="9 ">Gujarat</option>
+                        <option id="10 ">Haryana</option>
+                        <option id="11 ">Himachal Pradesh</option>
+                        <option id="12 ">Jammu & Kashmir (UT)</option>
+                        <option id="13 ">Jharkhand</option>
+                        <option id="14 ">Karnataka</option>
+                        <option id="15 ">Kerala</option>
+                        <option id="16 ">Ladakh (UT)</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 ">
+                        <label for="title " class="form-label ">District</label>
+                        <select id="title " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Anantnag</option>
+                        <option id="1 ">Baramulla</option>
+                        <option id="2 ">Srinagar</option>
+                        <option id="4 ">Options</option>
+                      </select>
+                    </div>
+                </div>
+
+                <div class="row pt-3 ">
+                    <div class="col-md-4 ">
+                        <label for="tehsil " class="form-label ">Tehsil / Sub-District</label>
+                        <select id="tehsil " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Tehsil 1</option>
+                        <option id="1 ">Tehsil 2</option>
+                        <option id="2 ">Tehsil 3</option>
+                        <option id="3 ">Tehsil 4</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4 ">
+                        <label for="city " class="form-label ">City / Village</label>
+                        <select id="city " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">City 1</option>
+                        <option id="1 ">City 2</option>
+                        <option id="2 ">City 3</option>
+                        <option id="4 ">City 4</option>
+                      </select>
+                    </div>
+                    <div class="col-4 ">
+                        <label for="post " class="form-label ">Post</label>
+                        <input type="text " class="form-control " id="pincode " placeholder="192101 ">
+                    </div>
+                </div>
+
+                <div class="row pt-3 ">
+                    <div class="col-md-4 ">
+                        <label for="photo_id " class="form-label ">Photo Id Type</label>
+                        <select id="photo_id " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Aadhaar</option>
+                        <option id="1 ">PAN Card</option>
+                        <option id="2 ">Ration Card</option>
+                        <option id="3 ">Driving Licence</option>
+                        <option id="4 ">Voter ID</option>
+                        <option id="5 ">Passport</option>
+                      </select>
+                    </div>
+                    <div class="col-4 ">
+                        <label for="photo_id_no " class="form-label ">Photo ID Number</label>
+                        <input type="number " class="form-control " id="photo_id_no " placeholder="12345678 ">
+                    </div>
+                    <div class="col-4 ">
+                        <label for="phone_number " class="form-label ">Mobile Number</label>
+                        <input type="number " class="form-control " id="phone_number " placeholder="9906543526 ">
+                    </div>
+                </div>
+
+                <div class="row pt-3 ">
+                    <div class="col-md-4 ">
+                        <label for="coll_center " class="form-label ">Collection Center</label>
+                        <select id="coll_center " class="form-select ">
+                        <option selected>Choose...</option>
+                        <option id="0 ">Yes</option>
+                        <option id="1 ">No</option>
+                      </select>
+                    </div>
+                    <div class="col-4 ">
+                        <label for="email " class="form-label ">Email ID</label>
+                        <input type="email " class="form-control " id="email " placeholder="abc@example.com ">
+                    </div>
+                </div>
+                <div class="row pt-3 ">
+                    <div class="col-md-12 ">
+                        <small class="text-danger "><b>Note:</b> Please make sure correct mail ID is mentioned in " Email ID " field as all future communications from eKissan will be sent on same Email ID.</small>
+                    </div>
+                </div>
+
+                <!-- Bank Details -->
+                <!-- Personal Details -->
+                <div class="alert alert-primary d-flex align-items-center mt-3 fs-6 " role="alert ">
+                    <svg class="bi flex-shrink-0 me-2 " width="24 " height="24 " role="img " aria-label="Info: "><use xlink:href="#info-fill "/></svg>
+                    <div>
+                        <b><i class="fa fa-money-bill "></i> Bank Details</b>
+                    </div>
+                </div>
+                <div class="row pt-2 ">
+                    <div class="col-4 ">
+                        <label for="bank_name " class="form-label ">Bank Name</label>
+                        <input type="text " class="form-control " id="bank_name " placeholder="Bank of India ">
+                    </div>
+                    <div class="col-4 ">
+                        <label for="acc_name " class="form-label ">Account Holder Name as per Bank A/C</label>
+                        <input type="text " class="form-control " id="acc_name " placeholder="example ">
+                    </div>
+                    <div class="col-4 ">
+                        <label for="acc_no " class="form-label ">Account Number</label>
+                        <input type="number " class="form-control " id="acc_no " placeholder="1234567890123456 ">
+                    </div>
+                </div>
+                <div class="row pt-3 ">
+                    <div class="col-4 ">
+                        <label for="con_acc_no " class="form-label ">Confirm Account Number</label>
+                        <input type="number " class="form-control " id="con_acc_no " placeholder="1234567890123456 ">
+                    </div>
+                    <div class="col-4 ">
+                        <label for="ifsc " class="form-label ">IFSC Code</label>
+                        <input type="number " class="form-control " id="con_acc_no " placeholder="147301 ">
+                    </div>
+                    <div class="col-4 ">
+                        <label for="con_ifsc " class="form-label ">Confirm IFSC Code</label>
+                        <input type="number " class="form-control " id="con_acc_no " placeholder="147301 ">
+                    </div>
+                </div>
+                <div class="row pt-3 ">
+                    <div class="col-4 ">
+                        <label for="pass_up " class="form-label ">Upload Copy of Passbook/Cancelled Check in Support</label>
+                        <input type="file " class="form-control " id="pass_up ">
+                    </div>
+                    <div class="col-4 ">
+                        <label for="identity_up " class="form-label ">Upload One Scan Copy of ID Proof</label>
+                        <input type="file " class="form-control " id="identity_up ">
+                    </div>
+                    <div class="col-4 ">
+                        <label for="comp_up " class="form-label ">Upload Company Registration Certificate</label>
+                        <input type="file " class="form-control " id="comp_up ">
+                    </div>
+                </div>
+
+                <div class="row pt-3 ">
+                    <div class="col-4 ">
+                        <label class="form-label ">Registration Acknowledgement </label>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="form-check ">
+                            <input class="form-check-input " type="checkbox " id="get_sms ">
+                            <label class="form-check-label " for="get_sms ">Get SMS</label>
+                        </div>
+                        <div class="form-check ">
+                            <input class="form-check-input " type="checkbox " id="get_email ">
+                            <label class="form-check-label " for="get_email ">Get Email</label>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row pt-3 ">
+                    <div class="col-12 ">
+                        <button type="submit " title="Register Now in eKissan " class="btn btn-primary ">Submit</button>
+                        <button type="reset " title="Reset all details and submit new form " class="btn btn-danger ">Cancel</button> &nbsp;&nbsp;&nbsp;
+                        <b><label for=" ">Already Having Account?</label></b> <a href="login.html ">Login Now</a>
+                    </div>
+                </div>
             </form>
-            <!------------------------- end changes -------------------->			
         </div>
     </div>
     <!-- End Registration Form -->
@@ -1172,10 +462,8 @@
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 ">
                     &copy; <a class="border-bottom " href="# ">E-Kissan</a> 2022-23. All Right Reserved.
                 </div>
-                <div class="col-md-6 text-center text-md-end
-                                ">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal ". Thank you for your support. ***/-->
-                    Designed & Developed By <a class="border-bottom " href="# ">E-Kissan</a>
+                <div class="col-md-6 text-center text-md-end ">
+                    Designed & Developed By <a class=" border-bottom " href="# ">E-Kissan</a>
                 </div>
             </div>
         </div>
@@ -1202,13 +490,12 @@
 
     <!-- Template Javascript -->
     <script src="lib/js/main.js "></script>
-    <script src="lib/js/register.js "></script>
-    <script type="text/javascript ">
+    <script type="text/javascript">
         n = new Date();
         y = n.getFullYear();
         m = n.getMonth() + 1;
         d = n.getDate();
-        document.getElementById("date ").innerHTML = m + "/ " + d + "/ " + y;
+        document.getElementById("date").innerHTML = m + "/ " + d + "/ " + y;
     </script>
 
     <script type="text/javascript ">
@@ -1236,7 +523,5 @@
         })
     </script>
 </body>
-
-</html>
 
 </html>
