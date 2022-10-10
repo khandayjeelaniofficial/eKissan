@@ -2821,27 +2821,27 @@ h4.panel-title a p {
 }
 
 .stakeholder-apmc {
-    background-image: url("../images/menu-icon/apmc.png");
+    background-image: url("../../images/icons/apmc.png");
 }
 
 .stakeholder-farmers {
-    background-image: url("../images/menu-icon/farmers.png");
+    background-image: url("../../images/icons/farmers.png");
 }
 
 .stakeholder-fpos {
-    background-image: url("../images/menu-icon/fpos.png");
+    background-image: url("../../images/icons/fpos.png");
 }
 
 .stakeholder-logistic {
-    background-image: url("../images/menu-icon/logistic.png");
+    background-image: url("../../images/icons/logistic.png");
 }
 
 .stakeholder-mandiboard {
-    background-image: url("../images/menu-icon/mandi-board.png");
+    background-image: url("../../images/icons/mandi-board.png");
 }
 
 .stakeholder-traders {
-    background-image: url("../images/menu-icon/traders.png");
+    background-image: url("../../images/icons/traders.png");
 }
 
 
@@ -3043,7 +3043,7 @@ h4.panel-title a p {
 /*resources*/
 
 .resources-train-calender {
-    background-image: url("../../images/training-calendar.png");
+    background-image: url("../../images/icons/training-calendar.png");
 }
 
 .green-theme .resources-train-calender,
@@ -3082,23 +3082,23 @@ h4.panel-title a p {
 }
 
 .resources-reg-guide {
-    background-image: url("../images/menu-icon/registration-guide.png");
+    background-image: url("../../images/icons/registration-guide.png");
 }
 
 .resources-manuals {
-    background-image: url("../images/menu-icon/manuals.png");
+    background-image: url("../../images/icons/manuals.png");
 }
 
 .resources-agri-tech {
-    background-image: url("../images/menu-icon/agri-tech-infra-fund.png");
+    background-image: url("../../images/icons/agri-tech-infra-fund.png");
 }
 
 .resources-faq-enam {
-    background-image: url("../images/menu-icon/faq-enam.png");
+    background-image: url("../../images/icons/faq-enam.png");
 }
 
 .resources-faq-trade {
-    background-image: url("../images/menu-icon/faq-traders.png");
+    background-image: url("../../images/icons/faq-traders.png");
 }
 
 
@@ -3176,7 +3176,7 @@ h4.panel-title a p {
 }
 
 .payment-banking {
-    background-image: url("../images/menu-icon/pay-netbanking.png");
+    background-image: url("../../images/icons/pay-netbanking.png");
 }
 
 .payment-bhim {

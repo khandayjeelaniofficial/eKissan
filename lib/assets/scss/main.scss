@@ -1,40 +1,41 @@
 @import 'base/_variable.scss';
 @import 'base/_mixins.scss';
-*{
-	margin: 0;
-	padding: 0;
-}
-*,
-::after,
-::before{
-	  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-a{
-	text-decoration:none;
-	transition:all 0.5s ease-in-out 0s;
-	&:hover{
-		text-decoration:none;
-	}
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.5s ease-in-out 0s;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 
 /*-----------------------------
 	News Ticker
 ------------------------------*/
-.acme-news-ticker{
-    $parent:&;
+
+.acme-news-ticker {
+    $parent: &;
     background: #fff;
     position: relative;
     height: 45px;
-    border: 1px solid $brand-primary;
+    border: 1px solid #348e38;
     margin-top: 45px;
-
     @include respond-above(sm) {
         margin-top: 0;
     }
-    &-label{
-        background:$brand-primary;
+    &-label {
+        background: $brand-primary;
         padding: 10px;
         width: auto;
         float: left;
@@ -42,13 +43,12 @@ a{
         line-height: normal;
         height: 100%;
         color: #fff;
-
         @include respond-below(xs) {
             position: absolute;
             top: -45px;
         }
     }
-    &-box{
+    &-box {
         height: 100%;
         padding-top: 10px;
         overflow: hidden;
@@ -56,19 +56,19 @@ a{
             padding-left: 10px;
             padding-right: 120px;
         }
-        ul{
+        ul {
             width: 100%;
             list-style-type: none !important;
             padding: 0;
             margin: 0;
-            li{
-                a{
+            li {
+                a {
                     text-decoration: none;
                 }
             }
         }
     }
-    &-controls{
+    &-controls {
         // margin-left: auto;
         display: flex;
         // align-items: center;
@@ -77,41 +77,39 @@ a{
         height: 100%;
         right: 0;
         top: 0;
-        button{
+        button {
             height: 100%;
-            background:#f6f6f6;
+            background: #f6f6f6;
             padding: 0;
             width: 40px;
-            border-color:$gray-lighter;
+            border-color: $gray-lighter;
             border-style: solid;
             border-width: 0 0 0 1px;
             cursor: pointer;
             display: inline-block;
-            &:hover{
+            &:hover {
                 background: $gray-lighter;
             }
-            &.acme-news-ticker-arrow  {
+            &.acme-news-ticker-arrow {
                 margin: 0;
                 display: inline-block;
                 position: relative;
-                    &:after {
-                        border-color: #999;
-                        border-bottom-style: solid;
-                        border-bottom-width: 2px;
-                        border-right-style: solid;
-                        border-right-width: 2px;
-                        content: '';
-                        display: inline-block;
-                        height: 8px;
-                        left: 50%;
-                        position: absolute;
-                        top: 50%;
-                        width: 8px;
-                    }
+                &:after {
+                    border-color: #999;
+                    border-bottom-style: solid;
+                    border-bottom-width: 2px;
+                    border-right-style: solid;
+                    border-right-width: 2px;
+                    content: '';
+                    display: inline-block;
+                    height: 8px;
+                    left: 50%;
+                    position: absolute;
+                    top: 50%;
+                    width: 8px;
+                }
             }
-        
-           
-            &.acme-news-ticker-pause{
+            &.acme-news-ticker-pause {
                 position: relative;
                 display: inline-block;
                 &:before {
@@ -127,44 +125,36 @@ a{
                     top: 50%;
                 }
             }
-
         }
-
-        &.acme-news-ticker-horizontal-controls{
-            button{
-
-                &.acme-news-ticker-prev{
-                    &:after{
-                       transform: translate(-50%,-50%)rotate(135deg); 
-    
+        &.acme-news-ticker-horizontal-controls {
+            button {
+                &.acme-news-ticker-prev {
+                    &:after {
+                        transform: translate(-50%, -50%)rotate(135deg);
                     }
                 }
-                &.acme-news-ticker-next{
-                    &:after{
-                        transform: translate(-50%,-50%) rotate(315deg); 
-    
+                &.acme-news-ticker-next {
+                    &:after {
+                        transform: translate(-50%, -50%) rotate(315deg);
                     }
                 }
             }
         }
-        &.acme-news-ticker-vertical-controls{
-                button{
-    
-                    &.acme-news-ticker-prev{
-                        &:after{
-                            // transform: rotate(135deg); for prev button
-                            transform: translate(-50%,-50%) rotate(225deg);
-        
-                        }
-                    }
-                    &.acme-news-ticker-next{
-                        &:after{
-                            //transform: rotate(315deg); for next button
-                            transform: translate(-50%,-50%) rotate(405deg);
-        
-                        }
+        &.acme-news-ticker-vertical-controls {
+            button {
+                &.acme-news-ticker-prev {
+                    &:after {
+                        // transform: rotate(135deg); for prev button
+                        transform: translate(-50%, -50%) rotate(225deg);
                     }
                 }
+                &.acme-news-ticker-next {
+                    &:after {
+                        //transform: rotate(315deg); for next button
+                        transform: translate(-50%, -50%) rotate(405deg);
+                    }
+                }
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ a:hover {
     background: #fff;
     position: relative;
     height: 45px;
-    border: 1px solid #19d222;
+    border: 1px solid #348e38;
     margin-top: 45px;
 }
 
@@ -41,7 +41,7 @@ a:hover {
 }
 
 .acme-news-ticker-label {
-    background: #10aa25;
+    background: #348e38;
     padding: 10px;
     width: auto;
     float: left;
