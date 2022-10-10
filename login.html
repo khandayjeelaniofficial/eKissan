@@ -4,34 +4,40 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>E-KISSAN | Log in</title>
+    <title>e-Kissan | Login</title>
     <link rel="icon" type="image/x-icon" href="images/icons/S2.png">
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet " href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback ">
+    <link rel="stylesheet " href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.css">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet " href="../plugins/icheck-bootstrap/icheck-bootstrap.css ">
+    <link rel="stylesheet " href="plugins/icheck-bootstrap/icheck-bootstrap.css">
     <!-- Theme style -->
-    <link rel="stylesheet " href="../dist/css/adminlte.css ">
-    <link rel="stylesheet" href="../dist/css/login.css">
+    <link rel="stylesheet " href="dist/css/adminlte.css">
+    <style>
+        body {
+            background-image: url('images/img4.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
 </head>
 
-<body class="hold-transition login-page ">
+<body class="hold-transition login-page">
     <div class="login-box ">
         <div class="login-logo ">
-            <a href="index.html "><img src="../images/icons/S4 - 4.png" alt="E-Kissan" height="160px" />
+            <a href="index.html "><img src="images/icons/logo.png" alt="E-Kissan" />
             </a>
         </div>
         <!-- /.login-logo -->
         <div class="card ">
-            <div class="card-body login-card-body ">
-                <p class="login-box-msg ">E-Kissan Welcomes You Back!</p>
+            <div class="card-body login-card-body">
+                <p class="login-box-msg "><b>e-Kissan Welcomes You Back!</b></p>
 
                 <form action="../../index3.html " method="post ">
                     <div class="input-group mb-3 ">
-                        <input type="email " class="form-control " placeholder="Email ">
+                        <input type="email " class="form-control " placeholder="Email" required>
                         <div class="input-group-append ">
                             <div class="input-group-text ">
                                 <span class="fas fa-envelope "></span>
@@ -39,7 +45,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3 ">
-                        <input type="password " class="form-control " placeholder="Password ">
+                        <input type="password " class="form-control " placeholder="Password" required>
                         <div class="input-group-append ">
                             <div class="input-group-text ">
                                 <span class="fas fa-lock "></span>
@@ -50,14 +56,12 @@
                         <div class="col-8 ">
                             <div class="icheck-primary ">
                                 <input type="checkbox " id="remember ">
-                                <label for="remember ">
-                Remember Me
-              </label>
+                                <label for="remember ">Remember Me</label>
                             </div>
                         </div>
                         <!-- /.col -->
                         <div class="col-4 ">
-                            <button type="submit " class="btn btn-primary btn-block ">Sign In</button>
+                            <button type="submit " class="btn btn-success btn-block ">Sign In</button>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -65,19 +69,19 @@
 
                 <div class="social-auth-links text-center mb-3 ">
                     <p>- OR -</p>
-                    <a href="# " class="btn btn-block btn-primary ">
-                        <i class="fab fa-facebook mr-2 "></i> Sign in using Adhaar
+                    <a href="#" class="btn btn-block btn-info">
+                        <i class="fa fa-id-card mr-2 "></i> Sign in using Adhaar
                     </a>
-                    <a href="# " class="btn btn-block btn-danger ">
-                        <i class="fab fa-google-plus mr-2 "></i> Sign in using Thumb
+                    <a href="#" class="btn btn-block btn-success">
+                        <i class="fa fa-thumbs-down mr-2 "></i> Sign in using Thumb
                     </a>
                 </div>
                 <!-- /.social-auth-links -->
 
-                <p class="mb-1 ">
-                    <a href="forgot-password.html ">I forgot my password</a>
+                <p class="mb-1 text-center">
+                    <a href="forgot-password.html">I forgot my password</a>
                 </p>
-                <p class="mb-0 ">
+                <p class="mb-0 text-center">
                     <a href="register.html " class="text-center ">Register as new Member</a>
                 </p>
             </div>
@@ -87,11 +91,11 @@
     <!-- /.login-box -->
 
     <!-- jQuery -->
-    <script src="../plugins/jquery/jquery.js "></script>
+    <script src="plugins/jquery/jquery.js "></script>
     <!-- Bootstrap 4 -->
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.js"></script>
     <!-- AdminLTE App -->
-    <script src="../dist/js/adminlte.js"></script>
+    <script src="dist/js/adminlte.js"></script>
 </body>
 
 </html>
