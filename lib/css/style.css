@@ -1,4 +1,5 @@
 /********** Template CSS **********/
+
 :root {
     --primary: #348E38;
     --secondary: #525368;
@@ -40,6 +41,7 @@ h6,
 
 
 /*** Spinner ***/
+
 #spinner {
     opacity: 0;
     visibility: hidden;
@@ -55,6 +57,7 @@ h6,
 
 
 /*** Button ***/
+
 .btn {
     transition: .5s;
     font-weight: 500;
@@ -92,6 +95,7 @@ h6,
 
 
 /*** Navbar ***/
+
 .navbar.sticky-top {
     top: -100px;
     transition: .5s;
@@ -126,11 +130,10 @@ h6,
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
-
     .navbar .navbar-nav {
         border-top: 1px solid #EEEEEE;
     }
@@ -146,7 +149,6 @@ h6,
         visibility: hidden;
         transition: .5s;
     }
-
     .navbar .nav-item:hover .dropdown-menu {
         top: 100%;
         visibility: visible;
@@ -157,6 +159,7 @@ h6,
 
 
 /*** Header ***/
+
 .carousel-caption {
     top: 0;
     left: 0;
@@ -189,7 +192,6 @@ h6,
         position: relative;
         min-height: 450px;
     }
-    
     #header-carousel .carousel-item img {
         position: absolute;
         width: 100%;
@@ -199,7 +201,7 @@ h6,
 }
 
 .page-header {
-    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../../images/img3.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -215,6 +217,7 @@ h6,
 
 
 /*** Top Feature ***/
+
 @media (min-width: 991.98px) {
     .top-feature {
         position: relative;
@@ -225,6 +228,7 @@ h6,
 
 
 /*** Facts & Quote ***/
+
 .facts,
 .quote {
     background: rgba(15, 66, 41, .6);
@@ -232,6 +236,7 @@ h6,
 
 
 /*** Service ***/
+
 .service-item {
     position: relative;
     text-align: center;
@@ -314,6 +319,7 @@ h6,
 
 
 /*** Project Portfolio ***/
+
 #portfolio-flters {
     display: inline-block;
     background: var(--light);
@@ -394,6 +400,7 @@ h6,
 
 
 /*** Team ***/
+
 .team-item {
     position: relative;
     overflow: hidden;
@@ -481,6 +488,7 @@ h6,
 
 
 /*** Footer ***/
+
 .footer .btn.btn-link {
     display: block;
     margin-bottom: 5px;
