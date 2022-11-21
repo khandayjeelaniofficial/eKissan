@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>e-Kissan | Mandi Dashboard</title>
+    <title>e-Kissan | Trader Dashboard</title>
     <link rel="icon" type="image/x-icon" href="../../images/icons/S1.png">
 
     <!-- Google Font: Source Sans Pro -->
@@ -70,6 +70,8 @@
                         </form>
                     </div>
                 </li>
+
+                <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fa fa-user-circle"></i>
@@ -82,7 +84,7 @@
                                 <img src="../../images/user1.png" alt="User Avatar " class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
-                                        Mandi Name
+                                        Trader Name
                                         <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                                     </h3>
                                     <p class="text-sm">Lorem ipsum dolor sit amet.</p>
@@ -122,10 +124,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="../../images/market.png " class="img-circle elevation-2 " alt="User Image">
+                        <img src="../../images/trader.png" class="img-circle elevation-2 " alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Welcome! Mandi</a>
+                        <a href="#" class="d-block">Welcome! Trader</a>
                     </div>
                 </div>
 
@@ -143,7 +145,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="mcats.html" class="nav-link">
+                            <a href="tcats.html" class="nav-link">
                                 <i class="nav-icon fa fa-plus-circle"></i>
                                 <p>
                                     Categories
@@ -151,7 +153,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="msubcat.html" class="nav-link">
+                            <a href="tsubCats.html" class="nav-link">
                                 <i class="nav-icon fa fa-outdent"></i>
                                 <p>
                                     Sub Categories
@@ -160,26 +162,24 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="mgallery.html" class="nav-link">
-                                <i class="nav-icon fas fa-image"></i>
+                            <a href="tarea.html" class ="nav-link">
+                                <i class = "nav-icon fas fa-map"></i> 
                                 <p>
-                                    Gallery
-                                    <span class="right badge badge-danger">New</span>
+                                    Area
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="treports.html" class ="nav-link">
+                                <i class="nav-icon fas fa-chart-area"></i>
+                                <p>
+                                    Reports
                                 </p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="mprices.html" class="nav-link">
-                                <i class="nav-icon fas fa-tags"></i>
-                                <p>
-                                    Prices
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="mbills.html" class="nav-link">
+                        <li class ="nav-item">
+                            <a href ="tbills.html" class = "nav-link">
                                 <i class="nav-icon fas fa-receipt"></i>
                                 <p>
                                     Bills
@@ -188,8 +188,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="mnotify.html" class="nav-link">
-                                <i class="nav-icon fas fa-comment"></i>
+                            <a href="tnotify.html" class="nav-link">
+                                <i class="nav-icon fas fa-bell"></i>
                                 <p>
                                     Notifications
                                     <span class="right badge badge-danger">New</span>
@@ -198,10 +198,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="mpayment.html" class="nav-link">
-                                <i class="nav-icon fas fa-wallet"></i>
+                            <a href="tquery.html" class="nav-link">
+                                <i class="nav-icon fas fa-comment"></i>
                                 <p>
-                                    Payments
+                                    Queries
+                                    <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
                         </li>
@@ -239,13 +240,13 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Mandi Dashboard</h1>
+                            <h1 class="m-0">Trader Dashboard</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active">Bills</li>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -260,124 +261,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>150</h3>
 
-                                    <p>Order Info</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                                <a href="mnotify.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3> 199-5999 <sup style="font-size: 20px"></sup></h3>
-
-                                    <p>Prices</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pricetag"></i>
-                                </div>
-                                <a href="mprices.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>10</h3>
-
-                                    <p>Products Registered</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-social-apple"></i>
-                                </div>
-                                <a href="mcats.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3>25</h3>
-
-                                    <p>Gallery</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-images"></i>
-                                </div>
-                                <a href="fbills.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>2500</h3>
-
-                                    <p>Current Year Rate</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pound"></i>
-                                </div>
-                                <a href="fbills.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3>20</h3>
-
-                                    <p>Product Bills</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
-                                <a href="mreports.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>200</h3>
-
-                                    <p>New Notifications</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-email-unread"></i>
-                                </div>
-                                <a href="mnotify.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3>10</h3>
-
-                                    <p>Payments</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-checkmark"></i>
-                                </div>
-                                <a href="tquery.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
 
 
                 </div>
